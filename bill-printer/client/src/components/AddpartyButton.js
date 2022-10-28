@@ -7,7 +7,7 @@ function AddPartyButton(props) {
   const ref = useRef(null);
 
   // Initialise the states
-  const [ items, setItems ] = useState([]);
+  const [ parties, setParties ] = useState([]);
   const [ input, setInput ] = useState('');
 
   // When the input value changes update
@@ -21,7 +21,7 @@ function AddPartyButton(props) {
   // reset the `input` state, and focus on 
   // the input element
   function handleClick() {
-    setItems([...items, input]);
+    setParties([...parties, input]);
     setInput('');
     ref.current.focus();
   }
@@ -41,7 +41,7 @@ function AddPartyButton(props) {
       <button className='AddParty' disabled={!input} onClick={handleClick}>+ Add Party</button>
     </div>
     <div className='PartyList'>
-      <div className='PartyListul'>{items.map(item => <button className='Party'><div className='partyli'><a href="https://www.google.com" target="_blank" rel="noreferrer">{item}</a></div></button>)}</div>
+      <div className='PartyListul'>{parties.map(item => <button className='Party'><div className='partyli'><a href="https://www.google.com" target="_blank" rel="noreferrer">{item}</a></div></button>)}</div>
     </div>
       
     </div>
